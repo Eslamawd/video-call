@@ -6,7 +6,7 @@ Thank you for your interest in contributing! We welcome all kinds of contributio
 
 ### 🐛 Report Bugs
 
-Found a bug? Please open an issue on [GitHub Issues](https://github.com/Eslamawd/social-app/issues) with:
+Found a bug? Please open an issue on [GitHub Issues](https://github.com/Eslamawd/video-call/issues) with:
 
 - Clear description of the bug
 - Steps to reproduce
@@ -34,17 +34,20 @@ Documentation is crucial! You can:
 ### 🔧 Code Contributions
 
 **Before coding:**
+
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature-name`
 3. Make sure you have a linked GitHub issue
 
 **While coding:**
+
 - Follow the existing code style
 - Add comments for complex logic
 - Test your changes locally with Docker
 - Keep commits atomic and well-messaged
 
 **Before submitting:**
+
 1. Run tests: `npm test` (if available)
 2. Build locally: `docker compose build`
 3. Test with: `docker compose up -d`
@@ -72,8 +75,8 @@ Help with:
 
 ```bash
 # 1. Clone your fork
-git clone https://github.com/YOUR_USERNAME/social-app.git
-cd social-app
+git clone https://github.com/YOUR_USERNAME/video-call.git
+cd video-call
 
 # 2. Create a feature branch
 git checkout -b feature/awesome-feature
@@ -119,6 +122,7 @@ git push origin feature/awesome-feature
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -128,6 +132,7 @@ git push origin feature/awesome-feature
 - `chore`: Build, dependencies, etc.
 
 **Example:**
+
 ```
 feat(rooms): add room persistence to database
 

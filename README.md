@@ -3,7 +3,7 @@
 > Real-time voice and video calling platform using **LiveKit**, built with **Next.js**, **NestJS**, and **Docker**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/Eslamawd/social-app?style=social)](https://github.com/Eslamawd/social-app)
+[![GitHub Stars](https://img.shields.io/github/stars/Eslamawd/video-call?style=social)](https://github.com/Eslamawd/video-call)
 [![Next.js](https://img.shields.io/badge/Next.js-16+-black?logo=next.js)](https://nextjs.org)
 [![NestJS](https://img.shields.io/badge/NestJS-10+-E0234E?logo=nestjs)](https://nestjs.com)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com)
@@ -199,7 +199,7 @@ docker compose build --no-cache
 
 ## 🌍 Deployment to VPS (Staging)
 
-For a complete step-by-step deployment guide, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+For a complete step-by-step deployment guide, see the VPS section in this README.
 
 ### Quick Checklist
 
@@ -276,7 +276,7 @@ For questions or support:
 
 - 📧 Email: contact@example.com
 - 💬 GitHub Discussions: [Link to discussions]
-- 🐛 Report Issues: [GitHub Issues](https://github.com/Eslamawd/social-app/issues)
+- 🐛 Report Issues: [GitHub Issues](https://github.com/Eslamawd/video-call/issues)
 
 ---
 
