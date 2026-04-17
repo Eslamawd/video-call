@@ -69,12 +69,12 @@
 
 ### Technology Stack
 
-| Component | Tech | Port |
-|-----------|------|------|
-| **Frontend** | Next.js 16+, TypeScript, React | 3011 |
-| **Backend API** | NestJS, TypeScript | 3001 |
-| **Media Server** | LiveKit Server | 7880 (WS) |
-| **Container** | Docker Compose | - |
+| Component        | Tech                           | Port      |
+| ---------------- | ------------------------------ | --------- |
+| **Frontend**     | Next.js 16+, TypeScript, React | 3011      |
+| **Backend API**  | NestJS, TypeScript             | 3001      |
+| **Media Server** | LiveKit Server                 | 7880 (WS) |
+| **Container**    | Docker Compose                 | -         |
 
 ---
 
@@ -90,8 +90,8 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/Eslamawd/social-app.git
-cd social-app
+git clone https://github.com/Eslamawd/video-call
+cd video-call
 
 # Create env file
 echo 'HOST_IP=192.168.8.42' > .env
@@ -219,6 +219,7 @@ For a complete step-by-step deployment guide, see [DEPLOYMENT.md](./DEPLOYMENT.m
 **Cause**: Mismatch between backend and LiveKit API keys.
 
 **Solution**:
+
 - Verify `LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` are identical
 - Restart backend: `docker compose restart backend`
 
@@ -227,6 +228,7 @@ For a complete step-by-step deployment guide, see [DEPLOYMENT.md](./DEPLOYMENT.m
 **Cause**: Firewall blocking or wrong HOST_IP.
 
 **Solution**:
+
 - Check firewall allows 7881/tcp, 7881/udp, and UDP range (53000-53100)
 - Verify `HOST_IP` in `.env` matches your local IP
 - Use `ipconfig` (Windows) or `ifconfig` (Linux) to find your IP
@@ -236,6 +238,7 @@ For a complete step-by-step deployment guide, see [DEPLOYMENT.md](./DEPLOYMENT.m
 **Cause**: Mobile device using localhost or wrong domain.
 
 **Solution**:
+
 - Access app via IP: `http://<HOST_IP>:3011` instead of localhost
 - Ensure mobile is on same WiFi network
 - Check CORS settings in backend
