@@ -1,0 +1,45 @@
+services:
+  livekit:
+    image: livekit/livekit-server:latest
+    command: --config /etc/livekit.yaml --node-ip ${HOST_IP:-127.0.0.1}
+    volumes:
+      - ./livekit.yaml:/etc/livekit.yaml:ro
+    ports:
+      - "7880:7880"
+      - "7881:7881/tcp"
+      - "7881:7881/udp"
+      - "53000-53100:53000-53100/udp"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    environment:
+      PORT: "3001"
+      FRONTEND_ORIGIN: http://${HOST_IP:-localhost}:3011
+      LIVEKIT_API_KEY: devkey
+      LIVEKIT_API_SECRET: devsecret_1234567890_1234567890_1234
+      LIVEKIT_URL: ws://${HOST_IP:-localhost}:7880
+    ports:
+      - "3001:3001"
+    depends_on:
+      - livekit
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_LIVEKIT_URL: ws://${HOST_IP:-localhost}:7880
+    environment:
+      PORT: "3011"
+      BACKEND_API_BASE_URL: http://backend:3001
+      NEXT_PUBLIC_API_BASE_URL: /api
+      NEXT_PUBLIC_LIVEKIT_URL: ws://${HOST_IP:-localhost}:7880
+    ports:
+      - "3011:3011"
+    depends_on:
+      - backend
+    restart: unless-stopped
